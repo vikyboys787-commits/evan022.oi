@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0f766e">
+<meta name="description" content="Belajar Mengaji dari Awal Sampai Bisa — platform belajar mengaji gratis.">
+<title>Belajar Mengaji — Awal Sampai Bisa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <a class="logo" href="#beranda">☪ <span>Belajar Mengaji</span></a>
+  <button class="hamb" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <nav><a href="#beranda">Beranda</a><a href="#kelas">Kelas</a><a href="#juzamma">Juz Amma</a><a href="#doa">Doa</a><a href="#kuis">Kuis</a></nav>
+</header>
+
+<main>
+<section id="beranda" class="hero">
+  <div class="hero-copy">
+    <span class="pill">🌙 GRATIS • UNTUK PEMULA</span>
+    <h1>Belajar Mengaji<br><em>Awal Sampai Bisa</em></h1>
+    <p>Belajar Al-Qur'an secara bertahap dari huruf hijaiyah, Iqra, tajwid, surah pendek hingga doa harian.</p>
+    <div class="actions"><a class="primary" href="#kelas">Mulai Belajar →</a><button class="secondary" onclick="continueLearning()">Lanjutkan Belajar</button></div>
+    <div class="trust"><span>✓ Bertahap</span><span>✓ Gratis</span><span>✓ Ramah Pemula</span></div>
+  </div>
+  <div class="hero-art"><div class="moon">☾</div><div class="mosque">🕌</div><b>Setiap huruf adalah<br>langkah menuju kebaikan.</b></div>
+</section>
+
+<section class="dashboard wrap">
+  <div class="dash-head"><div><small>PROGRES SAYA</small><h2 id="progressTitle">0% selesai</h2></div><div class="ring" id="ring">0%</div></div>
+  <div class="bar"><i id="bar"></i></div>
+  <div class="stats"><div><b id="lessonsDone">0</b><span>Pelajaran selesai</span></div><div><b id="quizScore">0</b><span>Skor kuis terbaik</span></div><div><b id="streak">0</b><span>Hari belajar</span></div></div>
+</section>
+
+<section id="kelas" class="wrap section">
+  <div class="section-title"><div><span class="eyebrow">KURIKULUM</span><h2>Belajar sesuai tahap</h2></div><p>Pilih materi dan tandai selesai setelah dipelajari.</p></div>
+  <div class="course-grid">
+    <article class="course"><span class="num">01</span><div class="course-icon">ا</div><h3>Huruf Hijaiyah</h3><p>Kenali 29 huruf dan latihan membacanya.</p><button onclick="finish('hijaiyah')">Mulai Pelajaran</button></article>
+    <article class="course"><span class="num">02</span><div class="course-icon">📖</div><h3>Iqra 1–6</h3><p>Dari harakat dasar sampai membaca rangkaian kata.</p><button onclick="finish('iqra')">Mulai Pelajaran</button></article>
+    <article class="course"><span class="num">03</span><div class="course-icon">◌</div><h3>Tajwid Dasar</h3><p>Pelajari hukum bacaan agar membaca lebih tepat.</p><button onclick="finish('tajwid')">Mulai Pelajaran</button></article>
+    <article class="course"><span class="num">04</span><div class="course-icon">🤲</div><h3>Doa Harian</h3><p>Doa sebelum belajar, makan, tidur dan aktivitas harian.</p><button onclick="finish('doa')">Mulai Pelajaran</button></article>
+    <article class="course"><span class="num">05</span><div class="course-icon">📜</div><h3>Surah Pendek</h3><p>Latihan membaca surah pendek Juz Amma.</p><button onclick="finish('surah')">Mulai Pelajaran</button></article>
+    <article class="course"><span class="num">06</span><div class="course-icon">🎯</div><h3>Latihan & Ujian</h3><p>Uji pemahaman dengan kuis dan raih skor terbaik.</p><a href="#kuis">Buka Kuis</a></article>
+  </div>
+</section>
+
+<section class="feature-band"><div><span class="eyebrow">LATIHAN HARI INI</span><h2>Kenali Huruf Hijaiyah</h2><p>Klik huruf untuk mendengarkan nama huruf. Gunakan suara perangkat jika tersedia.</p></div><div id="letters" class="letters"></div></section>
+
+<section id="juzamma" class="wrap section">
+  <div class="section-title"><div><span class="eyebrow">JUZ AMMA</span><h2>Surah Pendek</h2></div><p>Mulai dari surah yang familiar.</p></div>
+  <div class="surah-list">
+    <button onclick="showSurah('An-Nas','114')"><b>114</b><span>An-Nas</span><small>6 ayat</small>›</button>
+    <button onclick="showSurah('Al-Falaq','113')"><b>113</b><span>Al-Falaq</span><small>5 ayat</small>›</button>
+    <button onclick="showSurah('Al-Ikhlas','112')"><b>112</b><span>Al-Ikhlas</span><small>4 ayat</small>›</button>
+    <button onclick="showSurah('Al-Lahab','111')"><b>111</b><span>Al-Lahab</span><small>5 ayat</small>›</button>
+  </div>
+</section>
+
+<section id="doa" class="wrap section">
+  <div class="section-title"><div><span class="eyebrow">DOA HARIAN</span><h2>Doa sebelum belajar</h2></div></div>
+  <div class="dua-card"><div><p class="arabic">رَبِّ زِدْنِي عِلْمًا</p><p class="latin">Rabbi zidnii 'ilmaa.</p><p>“Ya Tuhanku, tambahkanlah ilmu kepadaku.”</p></div><button onclick="speak('Rabbi zidnii ilmaa')">🔊 Dengarkan</button></div>
+</section>
+
+<section id="kuis" class="quiz-wrap">
+  <div class="quiz-card"><span class="eyebrow">UJIAN CEPAT</span><h2>Kuis Huruf Hijaiyah</h2><p id="q">Huruf <strong>ب</strong> dibaca...</p><div id="answers" class="answers"></div><div id="feedback"></div><button id="next" class="primary hidden" onclick="nextQuestion()">Soal berikutnya →</button></div>
+</section>
+
+<section class="cta wrap"><div><h2>Belajar 10 menit hari ini.</h2><p>Yang penting bukan cepat, tetapi istiqamah.</p></div><a class="primary" href="#kelas">Mulai Sekarang</a></section>
+</main>
+<footer><div><b>☪ Belajar Mengaji</b><p>Awal Sampai Bisa • Website edukasi gratis</p></div><p>© 2026 Belajar Mengaji</p></footer>
+<div id="toast" class="toast"></div>
+<script src="script.js"></script>
+</body></html>
